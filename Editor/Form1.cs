@@ -38,11 +38,26 @@ namespace Editor
 
         private void SaveAs_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = openFileDialog1.ShowDialog();
+            DialogResult dialogResult = saveFileDialog1.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
-                System.IO.File.WriteAllText(openFileDialog1.FileName, richTextBox1.Text);
+                System.IO.File.WriteAllText(saveFileDialog1.FileName, richTextBox1.Text);
             }
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

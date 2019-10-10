@@ -36,6 +36,11 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.extra = new System.Windows.Forms.ToolStripMenuItem();
+            this.save = new System.Windows.Forms.ToolStripMenuItem();
+            this.search = new System.Windows.Forms.ToolStripMenuItem();
+            this.replace = new System.Windows.Forms.ToolStripMenuItem();
+            this.undo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +48,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.file});
+            this.file,
+            this.extra});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 33);
@@ -80,6 +86,7 @@
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(270, 34);
             this.close.Text = "Avsluta";
+            this.close.Click += new System.EventHandler(this.Close_Click);
             // 
             // richTextBox1
             // 
@@ -92,6 +99,47 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "txt";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
+            // 
+            // extra
+            // 
+            this.extra.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.save,
+            this.search,
+            this.replace,
+            this.undo});
+            this.extra.Name = "extra";
+            this.extra.Size = new System.Drawing.Size(66, 29);
+            this.extra.Text = "Extra";
+            // 
+            // save
+            // 
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(270, 34);
+            this.save.Text = "Save";
+            this.save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // search
+            // 
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(270, 34);
+            this.search.Text = "Search";
+            // 
+            // replace
+            // 
+            this.replace.Name = "replace";
+            this.replace.Size = new System.Drawing.Size(270, 34);
+            this.replace.Text = "Replace";
+            // 
+            // undo
+            // 
+            this.undo.Name = "undo";
+            this.undo.Size = new System.Drawing.Size(270, 34);
+            this.undo.Text = "Undo";
             // 
             // Form1
             // 
@@ -121,6 +169,11 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem extra;
+        private System.Windows.Forms.ToolStripMenuItem save;
+        private System.Windows.Forms.ToolStripMenuItem search;
+        private System.Windows.Forms.ToolStripMenuItem replace;
+        private System.Windows.Forms.ToolStripMenuItem undo;
     }
 }
 
